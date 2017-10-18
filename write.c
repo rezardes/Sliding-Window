@@ -4,31 +4,25 @@
 
 int main(void) 
 {
-	FILE *fin;
-	char *buff, *str;
-	int size;
-
+	char *msg = "halo halo bandung ibu kota periangan.";
+	char *buff;
+	int size, i;
 	FILE *fout;
 
 	printf("Size buffer (byte) : ");
 	scanf("%d", &size);
-	size++;
-	buff = malloc(size);
-
-	fin = fopen("message.txt","r"); //buffer diambil dari file message.txt
-	if (fin == NULL) {
-		printf("failed opening file\n");
+	buff = malloc(size+1);
+	
+	//fungsi write
+	fout = fopen("msgreceived.txt","w");
+	i = 0;
+	while ( i < strlen(msg)) {
+		strncpy(buff, msg + i, size);
+		printf("%s\n", buff);
+		fprintf(fout, "%s", buff);
+		i = i + size;
 	}
-	else {
-		//fungsi write
-		fout = fopen("msgreceived.txt","w");
-		while ( fgets(buff, size, fin) != NULL) {
-			fprintf(fout, "%s", buff);
-		}
-		fclose(fout);
-	}
-
-	fclose(fin);
+	fclose(fout);
 
 	return 0;
 }
