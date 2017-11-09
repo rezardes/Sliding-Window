@@ -20,6 +20,9 @@
 /* SETIAP MENERIMA PAKET, GESER KE LOWEST UNOCCUPANT
 */
 
+char inChar,t[28],cs[28],g[]="10100101";
+int a,e,c;
+
 void generateACK(char ack[], int num, int adv_win) 
 {
 	/* Bagaimana untuk > 2^7 */
@@ -41,6 +44,23 @@ int valInt(char ltr[])
 				(unsigned char) (ltr[3]) << 8 |
 				(unsigned char) (ltr[4]));
 	return num;
+}
+
+void xor(){
+    for(c = 1;c < N; c++)
+    cs[c] = (( cs[c] == g[c])?'0':'1');
+}
+
+void crc(){
+    for(e=0;e<N;e++)
+        cs[e]=t[e];
+    do{
+        if(cs[0]=='1')
+            xor();
+        for(c=0;c<N-1;c++)
+            cs[c]=cs[c+1];
+        cs[c]=t[e++];
+    }while(e<=a+N-1);
 }
 
 int main(int argc, char* argv[])

@@ -168,13 +168,14 @@ int main (int argc, char* argv[]) {
 
 	char file_name[32];
 
-	strcpy(file_name,"data/");
-	strcat(file_name,argv[1]);
+	strcpy(file_name,argv[1]);
 
 	/* BUKA FILE EKSTERNAL UNTUK READ */
 	fin = fopen(file_name,"r");
 	window_size = atoi(argv[2]);
 	buffer_size = atoi(argv[3]);
+	printf("WS:%d",window_size);
+	printf("BS:%d",buffer_size);
 	strcpy(destination_ip,argv[4]);
 	port_receiver = atoi(argv[5]);
 
