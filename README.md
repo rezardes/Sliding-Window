@@ -20,9 +20,9 @@ Data dikirimkan dalam bentuk frame yang memiliki SeqNum (sequence number) atau n
 ### C. Pembagian Tugas
 | No. | Nama (NIM) | Pembagian Tugas |
 | --- | ---------- | --------------- |
-| 1. | M. Dicky Andika Putra (13515044) |  |
-| 2. | Muthmainnah (13515059) |  |
-| 3. | M. Treza Nolandra (13515080) |  |
+| 1. | M. Dicky Andika Putra (13515044) | Algoritma Checksum |
+| 2. | Muthmainnah (13515059) | I/O Eksternal dan Readme.md |
+| 3. | M. Treza Nolandra (13515080) | Algoritma Sliding Window  |
 
 ### D. Pertanyaan & Jawaban
 1. Apa yang terjadi jika advertised window yang dikirim bernilai 0? Apa cara untuk menangani hal tersebut?
